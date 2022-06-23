@@ -4,7 +4,7 @@ import { increment, decrement, incrementByAmount } from './features/counterSlice
 
 const Counter = () => {
     //calling useSelector to grab current value of stat variable from the store
-    const count = useSelector((state) => state.value);
+    const count = useSelector((state) => state.counter.value);
     //dispatch hook
     const dispatch = useDispatch();
     const [input, setInput] = useState(0);
@@ -13,7 +13,7 @@ const Counter = () => {
         e.preventDefault()
         dispatch(incrementByAmount(Number(input)))
     }
-    
+
     return (
         <div>
             <h1>
